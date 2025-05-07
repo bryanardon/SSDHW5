@@ -1,0 +1,9 @@
+<p>Hi, {{ user }}</p>
+
+<h1>Details for Account {{account_number}}</h1>
+<p>
+  {% if balance is none %}
+  <strong>Account {{ account_number }} does not exist.</strong>
+  {%else%} Your balance is {{ balance }} {% endif %}
+</p>
+<p><a href="/dashboard">Back to Dashboard</a></p>
