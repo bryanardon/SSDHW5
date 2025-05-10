@@ -1,8 +1,8 @@
 # Bank App
 
-This is a secure banking platform following best practices from by Secure Software Development class.
+This is a secure banking platform following best practices from my Secure Software Development class. The currency for educational purposes will be pixar balls!
 
-## 🚀 How to Run the App (in Debug Mode)
+## How to Run the App
 
 ### 1. Set up your virtual environment
 
@@ -10,7 +10,7 @@ Create and activate a virtual environment:
 
 ```bash
 python -m venv env
-source env/bin/activate  # On Windows use: env\Scripts\activate
+source env/bin/activate
 ```
 
 ### 2. Install dependencies
@@ -19,8 +19,8 @@ source env/bin/activate  # On Windows use: env\Scripts\activate
 pip3 install Flask Flask-WTF PyJWT passlib
 ```
 
-### 3. Run Flask with debug for automatic reloading
+### 3. Run Flask
 
 ```bash
-flask run --debug
+flask run
 ```
