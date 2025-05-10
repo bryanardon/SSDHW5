@@ -58,7 +58,6 @@ input[type="submit"]:hover {
   height: auto;
 }
 
-/* General Layout */
 body.dashboard-page {
   background: linear-gradient(to right, #f9f9f9, #dff2fd);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -79,7 +78,6 @@ body.dashboard-page {
   text-align: center;
 }
 
-/* Headings */
 .dashboard-container h1 {
   font-size: 1.8rem;
   color: #ffcc00;
@@ -91,7 +89,6 @@ body.dashboard-page {
   color: #333;
 }
 
-/* Links */
 .dashboard-container a {
   display: inline-block;
   margin: 0.5rem 0;
@@ -105,7 +102,6 @@ body.dashboard-page {
   color: #ffcc00;
 }
 
-/* Transfer Link Highlight */
 .transfer-link {
   background-color: #ffcc00;
   color: #000;
@@ -118,10 +114,10 @@ body.dashboard-page {
   background-color: #ffe066;
 }
 
-/* Logout Link */
 .logout-link {
   text-align: right;
   margin-bottom: 1rem;
+  margin: 0;
 }
 
 .alert {
@@ -158,10 +154,6 @@ body.dashboard-page {
   color: #333;
 }
 
-.logout-link {
-  margin: 0;
-}
-
 .logout-link a {
   color: #0077cc;
   text-decoration: none;
@@ -193,6 +185,7 @@ body.dashboard-page {
   width: 15px;
   height: 15px;
 }
+
 .account-details-container {
   width: 90%;
   max-width: 600px;
@@ -233,6 +226,7 @@ body.dashboard-page {
 .back-link:hover {
   background-color: #ffe066;
 }
+
 .transfer-container {
   width: 90%;
   max-width: 600px;

@@ -5,7 +5,7 @@ def get_accounts(owner):
         con = sqlite3.connect('bank.db')
         cur = con.cursor()
         cur.execute('''
-            select * from accounts where owner=?''',
+            SELECT * FROM accounts WHERE owner=?''',
             (owner,))
         rows = cur.fetchall()
         if rows is None:
@@ -18,6 +18,8 @@ def get_balance(account_number, owner):
     try:
         con = sqlite3.connect('bank.db')
         cur = con.cursor()
+        # Use prepared statement to safely retrieve the account balance.
+        # This prevents SQL injection by separating SQL logic from user-provided data.
         cur.execute("SELECT balance FROM accounts where id=? and owner=?", (account_number, owner))
         row = cur.fetchone()
         if row is None:

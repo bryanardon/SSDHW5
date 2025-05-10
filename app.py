@@ -7,7 +7,6 @@ from functools import wraps
 from flask import redirect, url_for
 super_secret_key = token_hex(32)
 
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = super_secret_key
 csrf = CSRFProtect(app) 
@@ -29,7 +28,6 @@ def login():
     response.set_cookie("auth_token", user["token"])
     return response, 303
     
-
 @app.route("/dashboard", methods=['GET'])
 def dashboard():
     if not logged_in():
