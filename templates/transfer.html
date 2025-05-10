@@ -1,4 +1,4 @@
-<h1>Make a Transfer</h1>
+<!-- <h1>Make a Transfer</h1>
 
 <form method="POST" action="/transfer">
   <pre>
@@ -9,4 +9,40 @@
          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
   </pre>
 </form>
-<p><a href="/dashboard">Back to Dashboard</a></p>
+<p><a href="/dashboard">Back to Dashboard</a></p> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Make a Transfer</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body class="dashboard-page">
+    <div class="transfer-container">
+      <h1>Make a Transfer</h1>
+
+      <form method="POST" action="/transfer" class="transfer-form">
+        <div class="form-group">
+          <label for="from">From</label>
+          <input type="text" name="from" id="from" />
+        </div>
+        <div class="form-group">
+          <label for="to">To</label>
+          <input type="text" name="to" id="to" />
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="text" name="amount" id="amount" />
+        </div>
+
+        <input type="submit" value="Transfer" class="submit-btn" />
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      </form>
+
+      <a href="/dashboard" class="back-link">Back to Dashboard</a>
+    </div>
+  </body>
+</html>

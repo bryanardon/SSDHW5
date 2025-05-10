@@ -24,7 +24,7 @@
     <div class="alert alert-{{ category }}">{{ message }}</div>
     {% endfor %} {% endif %}
     <div class="header-dashboard">
-      <h3>Hi {{ email }}</h3>
+      <h3>Hi {{ email.split('@')[0] }}</h3>
       <p class="logout-link"><a href="/logout">Logout</a></p>
     </div>
     <div class="dashboard-container">

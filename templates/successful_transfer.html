@@ -1,8 +1,37 @@
-<h1>✅ Transfer Successful {{ user.split('@')[0] }}</h1>
+<!-- <h1>✅ Transfer Successful {{ user.split('@')[0] }}</h1>
 
 <p>
   Your transfer of {{ amount }} has been transferred successfully from account
   {{ source }} to account {{ target }}.
 </p>
 
-<p><a href="/dashboard">Back to Dashboard</a></p>
+<p><a href="/dashboard">Back to Dashboard</a></p> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Transfer Successful</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body class="dashboard-page">
+    <div class="dashboard-container">
+      <h1>Transfer Successful, {{ user.split('@')[0] }}!</h1>
+
+      <p class="success-message">
+        Your transfer of <strong>{{ amount }}</strong> pixar balls
+        <img
+          src="{{ url_for('static', filename='images/pixar_ball.png') }}"
+          alt="Pixar Ball"
+          class="mini-ball"
+        />
+        has been successfully sent from <strong>Account {{ source }}</strong> to
+        <strong>Account {{ target }}</strong>.
+      </p>
+
+      <a href="/dashboard" class="back-link">Back to Dashboard</a>
+    </div>
+  </body>
+</html>

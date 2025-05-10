@@ -1,4 +1,4 @@
-<p>Hi, {{ user }}</p>
+<!-- <p>Hi, {{ user }}</p>
 
 <h1>Details for Account {{account_number}}</h1>
 <p>
@@ -6,4 +6,46 @@
   <strong>Account {{ account_number }} does not exist.</strong>
   {%else%} Your balance is {{ balance }} {% endif %}
 </p>
-<p><a href="/dashboard">Back to Dashboard</a></p>
+<p><a href="/dashboard">Back to Dashboard</a></p> -->
+<!-- <div class="account-details-container">
+  <p class="greeting">Hi, {{ user }}</p>
+
+  <h1>Details for Account {{ account_number }}</h1>
+
+  <p class="balance-info">
+    {% if balance is none %}
+    <strong>Account {{ account_number }} does not exist.</strong>
+    {% else %} Your balance is {{ balance }} {% endif %}
+  </p>
+
+  <a href="/dashboard" class="back-link">Back to Dashboard</a>
+</div> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Account Details</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body class="dashboard-page">
+    <div class="account-details-container">
+      <h1>Details for Account {{ account_number }}</h1>
+
+      <p class="balance-info">
+        {% if balance is none %}
+        <strong>Account {{ account_number }} does not exist.</strong>
+        {% else %} Your balance is {{ balance }} pixar balls
+        <img
+          src="{{ url_for('static', filename='images/pixar_ball.png') }}"
+          alt="Pixar Ball"
+          class="mini-ball"
+        />{% endif %}
+      </p>
+
+      <a href="/dashboard" class="back-link">Back to Dashboard</a>
+    </div>
+  </body>
+</html>
