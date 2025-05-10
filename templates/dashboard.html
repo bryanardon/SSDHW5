@@ -1,4 +1,4 @@
-{% if messages %} {% for category, message in messages %}
+<!-- {% if messages %} {% for category, message in messages %}
 <div class="alert alert-{{ category }}">{{ message }}</div>
 {% endfor %} {% endif %}
 <p><a href="/logout">Logout</a></p>
@@ -8,4 +8,46 @@
   <a href="/details?account={{ account }}">Account {{ account }} details </a>
 </p>
 {% endfor %}
-<p><a href="/transfer">Transfer</a></p>
+<p><a href="/transfer">Transfer</a></p> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body class="dashboard-page">
+    {% if messages %} {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %} {% endif %}
+    <div class="header-dashboard">
+      <h3>Hi {{ email }}</h3>
+      <p class="logout-link"><a href="/logout">Logout</a></p>
+    </div>
+    <div class="dashboard-container">
+      <h1>Welcome to Your Pixar Ball Bank Dashboard</h1>
+      <h2>What would you like to do today?</h2>
+
+      <div class="account-links">
+        {% for account in accounts %}
+        <p>
+          <a href="/details?account={{ account }}"
+            >Account {{ account }} Details</a
+          >
+        </p>
+        {% endfor %}
+      </div>
+
+      <p><a href="/transfer" class="transfer-link">Make a Transfer</a></p>
+
+      <img
+        src="{{ url_for('static', filename='images/pixar_ball.png') }}"
+        alt="Pixar Ball"
+        class="dashboard-ball"
+      />
+    </div>
+  </body>
+</html>

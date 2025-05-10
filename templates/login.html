@@ -1,4 +1,4 @@
-{% if error %}
+<!-- {% if error %}
 <p style="color: red">{{ error }}</p>
 {% endif %}
 <form method="post" action="/login">
@@ -6,4 +6,33 @@
   <p>Password: <input type="password" name="password" /></p>
   <p><input type="submit" value="Login" /></p>
   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
-</form>
+</form> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+    <h1>Welcome to Pixar Balls Banking App</h1>
+    <form method="post" action="/login" class="login-form">
+      <p>Email: <input type="text" name="email" /></p>
+      <p>Password: <input type="password" name="password" /></p>
+      <p><input type="submit" value="Login" /></p>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    </form>
+    <img
+      src="{{ url_for('static', filename='images/pixar_ball.png') }}"
+      alt="Pixar Ball"
+      class="pixar-ball"
+    />
+  </body>
+</html>
